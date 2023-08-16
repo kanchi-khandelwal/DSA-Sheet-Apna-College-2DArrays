@@ -1,0 +1,39 @@
+class Solution{
+	
+	public:
+	vector<int> downwardDiagonal(int N, vector<vector<int>> A)
+	{
+		vector<int> ans;
+		int i=0, j=0,cols=0, rows=0;
+		while(j<N)
+		{
+		    cols=j;
+		    rows=i;
+		    while(cols>=0)
+		    {
+		        ans.push_back(A[rows][cols]);
+		        cols--;
+		        rows++;
+		    }
+		    j++;
+		}
+		i=1;
+		while(i<=N-1)
+		{
+		    cols=N-1;
+		    rows=i;
+		    while(rows<=N-1)
+		    {
+		        ans.push_back(A[rows][cols]);
+		        cols--;
+		        rows++;
+		    }
+		    i++;
+		}
+		return ans;
+	}
+
+};
+
+
+
